@@ -32,22 +32,22 @@ var studenti = [{
 }];
 console.log(studenti);
 
-for (var key in studenti){
-  console.log(studenti[key].nome, studenti[key].cognome);
-  $(".studenti").append('<h1>' + studenti[key].nome + " " + studenti[key].cognome + " " + '</h1>');
-}
-
-// var nome = prompt("nome");
-// var cognome = prompt("cognome");
-// var eta = prompt("età");
-//
-// studenti.push({
-//   "nome": nome,
-//   "cognome": cognome,
-//   "eta": eta
-// })
-//
 // for (var key in studenti){
 //   console.log(studenti[key].nome, studenti[key].cognome);
 //   $(".studenti").append('<h1>' + studenti[key].nome + " " + studenti[key].cognome + " " + '</h1>');
 // }
+
+var nome = prompt("nome");
+var cognome = prompt("cognome");
+var eta = prompt("età");
+
+studenti.push({
+  "nome": nome,
+  "cognome": cognome,
+  "eta": eta
+})
+
+for (var key in studenti){
+  console.log(studenti[key].nome, studenti[key].cognome);
+  $(".studenti").append('<h1>' + studenti[key].nome + " " + studenti[key].cognome + " " + studenti[key].eta + " " + '</h1>');
+}
