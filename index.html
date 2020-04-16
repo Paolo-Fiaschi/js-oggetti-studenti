@@ -5,9 +5,49 @@
     <title>oggetti studenti</title>
   </head>
   <body>
-    <div class="studenti">
 
-    </div>
+    <label for="dati">Inserisci i dati</label>
+    <input class="nomeI" type="text" name="Nome" value="" placeholder="Nome">
+    <input class="cognomeI" type="text" name="Cognome" value="" placeholder="Cognome">
+    <input class="etaI" type="number" name="Nome" value="" placeholder="Età">
+    <button class="aggiungi" type="button" name="button">Aggiungi</button>
+
+    <table>
+      <tr>
+        <th>Studenti</th>
+      </tr>
+      <tr>
+        <td>Nome</td>
+        <td>Cognome</td>
+        <td>Età</td>
+      </tr>
+      <tr>
+        <td>Mario</td>
+        <td>Rossi</td>
+        <td>32</td>
+      </tr>
+      <tr>
+        <td>Gianni</td>
+        <td>Boncini</td>
+        <td>20</td>
+      </tr>
+      <tr>
+        <td>Alessio</td>
+        <td>Bisoli</td>
+        <td>35</td>
+      </tr>
+    </table>
+
+
+    <!-- TEMPLATE ------------------------------------->
+    <script id="studenti-template" type="text/x-handlebars-template">
+      <tr>
+        <td class="nome">{{nomePH}}</td>
+        <td class="cognome">{{cognomePH}}</td>
+        <td class="eta">{{etaPH}}</td>
+      </tr>
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <script
         src="https://code.jquery.com/jquery-3.4.1.js"

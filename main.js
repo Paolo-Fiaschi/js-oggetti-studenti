@@ -37,17 +37,52 @@ console.log(studenti);
 //   $(".studenti").append('<h1>' + studenti[key].nome + " " + studenti[key].cognome + " " + '</h1>');
 // }
 
-var nome = prompt("nome");
-var cognome = prompt("cognome");
-var eta = prompt("età");
+// var nome = prompt("nome");
+// var cognome = prompt("cognome");
+// var eta = prompt("età");
+//
+// studenti.push({
+//   "nome": nome,
+//   "cognome": cognome,
+//   "eta": eta
+// })
+//
+// for (var key in studenti){
+//   console.log(studenti[key].nome, studenti[key].cognome);
+//   $(".studenti").append('<h1>' + studenti[key].nome + " " + studenti[key].cognome + " " + studenti[key].eta + " " + '</h1>');
+// }
+$(".nomeI").val("");
+$(".cognomeI").val("");
+$(".etaI").val("");
 
-studenti.push({
-  "nome": nome,
-  "cognome": cognome,
-  "eta": eta
-})
+$(".aggiungi").click(
+  function(){
+    var nome = $(".nomeI").val();
+    var cognome = $(".cognomeI").val();
+    var eta = $(".etaI").val();
+    // studenti.push({
+    //   "nome": nome,
+    //   "cognome": cognome,
+    //   "eta": eta
+    // })
+    // template handlebars
+    var source = $("#studenti-template").html();
+    var template = Handlebars.compile(source);
+    var context = {
+      "nomePH": nome,
+      "cognomePH": cognome,
+      "etaPH": eta
+    };
+    var studenteDaAggiungere = template(context);
 
-for (var key in studenti){
-  console.log(studenti[key].nome, studenti[key].cognome);
-  $(".studenti").append('<h1>' + studenti[key].nome + " " + studenti[key].cognome + " " + studenti[key].eta + " " + '</h1>');
-}
+    $("table").append(studenteDaAggiungere);
+    $(".nomeI").val("");
+    $(".cognomeI").val("");
+    $(".etaI").val("");
+
+    // for (var key in studenti){
+    //   console.log(studenti[key].nome, studenti[key].cognome);
+    //   $(".studenti").append('<h1>' + studenti[key].nome + " " + studenti[key].cognome + " " + studenti[key].eta + " " + '</h1>');
+    // }
+  }
+);
